@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balance - Terapia Física y Rehabilitación</title>
+    <!-- Tipografía elegante de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ESTILOS GENERALES (Colores y Letras) */
+        :root {
+            --verde-olivo: #556B2F; /* Verde Olivo Principal */
+            --verde-oscuro: #3B4C20;
+            --beige-claro: #F5F5DC;
+            --blanco-puro: #FFFFFF;
+            --texto-oscuro: #2F3E1B;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--blanco-puro);
+            color: var(--texto-oscuro);
+            line-height: 1.6;
+        }
+
+        /* MENÚ DE NAVEGACIÓN FIJO */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--verde-olivo);
+            letter-spacing: 2px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--texto-oscuro);
+            margin-left: 30px;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--verde-olivo);
+        }
+
+        /* SECCIÓN DE BIENVENIDA (CON VIDEO DE FONDO) */
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--blanco-puro);
+            overflow: hidden;
+            padding: 0 20px;
+        }
+
+        /* El video de fondo */
+        .hero-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -2;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+        }
+
+        /* Capa oscura/verdosa para que el texto sea legible */
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(47, 62, 27, 0.5); /* Filtro verde/oscuro transparente */
+            z-index: -1;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 52px;
+            font-weight: 400;
+            margin-bottom: 20px;
+            letter-spacing: 3px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            font-weight: 300;
+            max-width: 600px;
+            margin-bottom: 40px;
+            letter-spacing: 1px;
+        }
+
+        /* Botón elegante y llamativo */
+        .btn-principal {
+            display: inline-block;
+            padding: 15px 40px;
+            background-color: var(--verde-olivo);
+            color: var(--blanco-puro);
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: background-color 0.3s, transform 0.2s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn-principal:hover {
+            background-color: var(--verde-oscuro);
+            transform: translateY(-2px);
+        }
+
+        /* SECCIONES DE RELLENO TEMPORAL */
+        .seccion-demo {
+            padding: 100px 50px;
+            text-align: center;
+            background-color: var(--blanco-puro);
+        }
+
+        .seccion-demo:nth-child(even) {
+            background-color: #FAF9F6; /* Un tono beige/blanco muy suave alternado */
+        }
+
+        .seccion-demo h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            color: var(--verde-olivo);
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- MENÚ -->
+    <header>
+        <div class="logo">BALANCE</div>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#nosotros">Quiénes Somos</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <!-- SECCIÓN PRINCIPAL CON VIDEO -->
+    <section id="inicio" class="hero">
+        <!-- NOTA: Usamos un video de naturaleza público temporal. Luego lo cambiaremos por el tuyo -->
+        <video autoplay loop muted playsinline class="hero-video">
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-forest-stream-in-the-sunlight-529-large.mp4" type="video/mp4">
+            Tu navegador no soporta videos de fondo.
+        </video>
+        <div class="hero-overlay"></div>
+
+        <h1>Balance</h1>
+        <p>Terapia física, rehabilitación y bienestar integral con un enfoque natural y profesional para sanar tu cuerpo.</p>
+        <a href="#contacto" class="btn-principal">Agendar Cita</a>
+    </section>
+
+    <!-- SECCIÓN QUIÉNES SOMOS (Estructura base) -->
+    <section id="nosotros" class="seccion-demo">
+        <h2>Quiénes Somos</h2>
+        <p>Aquí irá la presentación premium de tu negocio, tu misión y tu visión explicada de forma clara para tus pacientes.</p>
+    </section>
+
+    <!-- SECCIÓN SERVICIOS (Estructura base) -->
+    <section id="servicios" class="seccion-demo">
+        <h2>Nuestros Servicios</h2>
+        <p>Aquí detallaremos las terapias, tratamientos post-lesión y especialidades médicas que ofreces.</p>
+    </section>
+
+    <!-- SECCIÓN CONTACTO (Estructura base) -->
+    <section id="contacto" class="seccion-demo">
+        <h2>Contacto</h2>
+        <p>Aquí configuraremos tu mapa, horarios y el enlace directo para que te escriban a WhatsApp.</p>
+    </section>
+
+</body>
+</html>
