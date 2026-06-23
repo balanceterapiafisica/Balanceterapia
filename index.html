@@ -218,6 +218,7 @@
         /* SECCIÓN CONÓCENOS */
         #nosotros {
             background-color: var(--beige-balance);
+            padding-bottom: 60px;
         }
 
         .grid-nosotros {
@@ -267,51 +268,80 @@
             margin-bottom: 10px;
         }
 
-        /* GALERÍA DE IMÁGENES DECORATIVAS (MOSAICO CORREGIDO) */
-        .galeria-decorativa {
-            padding: 40px 10% 100px 10%;
+        /* NUEVA SECCIÓN DE ENFOQUES INTERACTIVOS (SUSTITUYE AL MOSAICO CON ERRORES) */
+        .enfoques-balance {
+            padding: 10px 10% 100px 10%;
             background-color: var(--beige-balance);
         }
 
-        .grid-galeria {
+        .grid-enfoques {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-            max-width: 1200px;
+            gap: 30px;
+            max-width: 1100px;
             margin: 0 auto;
         }
 
-        .item-galeria {
+        .tarjeta-enfoque {
+            background-color: var(--blanco-puro);
+            padding: 40px 30px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+            border: 1px solid rgba(85, 107, 47, 0.1);
+            transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease, border-color 0.4s ease;
             position: relative;
-            height: 350px;
             overflow: hidden;
-            border-radius: 6px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
 
-        .item-galeria img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
+        /* Animación Premium al pasar el cursor */
+        .tarjeta-enfoque:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(85, 107, 47, 0.15);
+            border-color: var(--verde-olivo);
         }
 
-        .item-galeria:hover img {
-            transform: scale(1.06);
-        }
-
-        .item-galeria .info-overlay {
+        /* Detalle decorativo superior en las tarjetas */
+        .tarjeta-enfoque::before {
+            content: '';
             position: absolute;
-            bottom: 0;
+            top: 0;
             left: 0;
             width: 100%;
-            padding: 20px;
-            background: linear-gradient(transparent, rgba(0,0,0,0.7));
-            color: white;
+            height: 4px;
+            background-color: var(--verde-claro);
+            transition: background-color 0.3s ease;
+        }
+
+        .tarjeta-enfoque:hover::before {
+            background-color: var(--verde-olivo);
+        }
+
+        .tarjeta-enfoque i {
+            font-size: 36px;
+            color: var(--verde-olivo);
+            margin-bottom: 20px;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .tarjeta-enfoque:hover i {
+            transform: scale(1.1);
+        }
+
+        .tarjeta-enfoque h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            color: var(--texto-oscuro);
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .tarjeta-enfoque p {
             font-size: 14px;
-            font-weight: 500;
-            letter-spacing: 1px;
-            text-transform: uppercase;
+            color: var(--texto-suave);
+            font-weight: 300;
+            line-height: 1.6;
         }
 
         /* SECCIÓN SEPARADORA PANORÁMICA */
@@ -570,11 +600,10 @@
             .hero h1 { font-size: 42px; }
             .grid-nosotros { flex-direction: column; }
             .mision-vision { grid-template-columns: 1fr; }
-            .grid-galeria { grid-template-columns: 1fr; }
-            .item-galeria { height: 265px; }
+            .grid-enfoques { grid-template-columns: 1fr; gap: 20px; }
             .contenido-contacto { grid-template-columns: 1fr; gap: 30px; }
             section { padding: 70px 5%; }
-            .galeria-decorativa { padding: 20px 5% 70px 5%; }
+            .enfoques-balance { padding: 10px 5% 70px 5%; }
         }
     </style>
 </head>
@@ -636,21 +665,26 @@
         </div>
     </section>
 
-    <!-- MÓDULO DE IMÁGENES DECORATIVAS ACTUALIZADO -->
-    <div class="galeria-decorativa">
-        <div class="grid-galeria">
-            <div class="item-galeria">
-                <img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?auto=format&fit=crop&w=600&q=80" alt="Masajes de Relajación">
-                <div class="info-overlay">Masajes y Relajación</div>
+    <!-- NUEVO MÓDULO INTERACTIVO CON ANIMACIÓN (REEMPLAZA EL MOSAICO DE IMÁGENES ANTERIOR) -->
+    <div class="enfoques-balance">
+        <div class="grid-enfoques">
+            <!-- Bloque 1: Alivio Físico -->
+            <div class="tarjeta-enfoque">
+                <i class="fa-solid fa-spa"></i>
+                <h4>Alivio y Descanso</h4>
+                <p>Técnicas manuales profundas orientadas a liberar tensiones musculares acumuladas y restaurar la calma corporal.</p>
             </div>
-            <div class="item-galeria">
-                <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=600&q=80" alt="Terapia Física">
-                <div class="info-overlay">Terapia Física y Movilidad</div>
+            <!-- Bloque 2: Movilidad Activa -->
+            <div class="tarjeta-enfoque">
+                <i class="fa-solid fa-person-walking-arrow-right"></i>
+                <h4>Movilidad Activa</h4>
+                <p>Ejercicios guiados y terapias específicas para devolverle a tus articulaciones su rango natural de movimiento diario.</p>
             </div>
-            <!-- Nueva Imagen Corregida: Fisioterapeuta asistiendo activamente en un ejercicio de estiramiento al paciente -->
-            <div class="item-galeria">
-                <img src="https://images.unsplash.com/photo-1597856330262-a36b69477e6f?auto=format&fit=crop&w=600&q=80" alt="Fisioterapeuta asistiendo estiramiento a paciente">
-                <div class="info-overlay">Rehabilitación Integral</div>
+            <!-- Bloque 3: Rehabilitación Integral -->
+            <div class="tarjeta-enfoque">
+                <i class="fa-solid fa-hand-holding-medical"></i>
+                <h4>Rehabilitación Integral</h4>
+                <p>Acompañamiento profesional y clínico constante enfocado en la recuperación completa de lesiones musculares.</p>
             </div>
         </div>
     </div>
@@ -681,7 +715,7 @@
                 <h3>Terapia Física</h3>
                 <p>Recupera de manera profesional tu movilidad natural, tu fuerza muscular y la funcionalidad completa de tu cuerpo.</p>
             </div>
-            <!-- 3. Rehabilitación - ICONO CORREGIDO: Brazo con Fuerza / Bíceps 💪 -->
+            <!-- 3. Rehabilitación -->
             <div class="tarjeta-servicio">
                 <div class="icono-borde"><i class="fa-solid fa-dumbbell"></i></div>
                 <h3>Rehabilitación</h3>
@@ -746,8 +780,8 @@
 
         <div class="redes-sociales-footer">
             <p>SÍGUENOS EN NUESTRAS REDES SOCIALES</p>
-            <a href="#" target="_blank" title="Instagram de Balance"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#" target="_blank" title="Facebook de Balance"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.instagram.com/balance_terapiafisica?igsh=ZjE5Mzlpbnp4MmU2" target="_blank" title="Instagram de Balance"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61591173515623" target="_blank" title="Facebook de Balance"><i class="fa-brands fa-facebook"></i></a>
         </div>
     </section>
 
