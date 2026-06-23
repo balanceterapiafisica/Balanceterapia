@@ -3,29 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Balance - Terapia Física y Rehabilitación</title>
+    <title>Balance - Masajes y Terapia Física</title>
     
     <!-- Fuentes Elegantes y Legibles -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
     
-    <!-- Iconos para Servicios y Redes -->
+    <!-- Iconos Modernos (FontAwesome) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        /* CONFIGURACIÓN DE COLORES (Verde Olivo, Blanco y Beige) */
+        /* PALETA DE COLORES OFICIAL DE BALANCE */
         :root {
             --verde-olivo: #556B2F; 
             --verde-claro: #8FBC8F;
             --verde-oscuro: #3B4C20;
-            --beige-premium: #F7F5F0; /* Beige muy claro y elegante */
+            --beige-balance: #F2EFE9; /* Tono beige claro de tus flyers */
             --blanco-puro: #FFFFFF;
             --texto-oscuro: #2C3524;
             --texto-suave: #606C55;
         }
 
-        /* Estilos Base y Desplazamiento Suave */
         html {
             scroll-behavior: smooth;
         }
@@ -44,38 +43,48 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* MENÚ DE NAVEGACIÓN PREMIUM */
+        /* BARRA DE NAVEGACIÓN PREMIUM */
         header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            background-color: rgba(255, 255, 255, 0.97);
-            padding: 20px 8%;
+            background-color: rgba(255, 255, 255, 0.98);
+            padding: 18px 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.03);
+            box-shadow: 0 2px 25px rgba(0,0,0,0.04);
         }
 
-        .logo {
+        .logo-contenedor {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo-texto {
             font-family: 'Playfair Display', serif;
             font-size: 26px;
-            font-weight: 500;
+            font-weight: 600;
             color: var(--verde-olivo);
             letter-spacing: 3px;
-            text-decoration: none;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
         }
 
         nav a {
             text-decoration: none;
             color: var(--texto-oscuro);
-            margin-left: 35px;
+            margin-left: 30px;
             font-size: 13px;
             font-weight: 500;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
+            letter-spacing: 1px;
             transition: color 0.3s;
         }
 
@@ -83,7 +92,21 @@
             color: var(--verde-olivo);
         }
 
-        /* SECCIÓN DE BIENVENIDA (HERO) */
+        .nav-redes {
+            margin-left: 40px;
+            padding-left: 20px;
+            border-left: 1px solid #DDD;
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-redes a {
+            margin-left: 0;
+            font-size: 16px;
+            color: var(--verde-olivo);
+        }
+
+        /* SECCIÓN INICIAL (HERO CON VIDEO) */
         .hero {
             position: relative;
             height: 100vh;
@@ -97,7 +120,6 @@
             padding: 0 20px;
         }
 
-        /* Video de Fondo */
         .hero-video {
             position: absolute;
             top: 50%;
@@ -111,64 +133,72 @@
             object-fit: cover;
         }
 
-        /* Filtro Verde/Oscuro para asegurar lectura premium */
         .hero-overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(44, 53, 36, 0.6), rgba(85, 107, 47, 0.4));
+            background: linear-gradient(135deg, rgba(44, 53, 36, 0.65), rgba(85, 107, 47, 0.45));
             z-index: -1;
         }
 
         .hero h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 60px;
-            font-weight: 400;
+            font-size: 65px;
+            font-weight: 500;
             margin-bottom: 15px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+        }
+
+        .hero h2 {
+            font-size: 20px;
+            font-weight: 300;
             letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            color: var(--beige-balance);
         }
 
         .hero p {
             font-size: 18px;
             font-weight: 300;
-            max-width: 650px;
+            max-width: 700px;
             margin-bottom: 40px;
-            letter-spacing: 1px;
             color: rgba(255, 255, 255, 0.9);
+            font-style: italic;
         }
 
-        /* BOTONES */
         .btn-principal {
             display: inline-block;
             padding: 16px 45px;
             background-color: var(--verde-olivo);
             color: var(--blanco-puro);
             text-decoration: none;
-            border-radius: 2px;
+            border-radius: 4px;
             font-size: 13px;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 2px;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
 
         .btn-principal:hover {
             background-color: var(--verde-oscuro);
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
         }
 
-        /* ESTILOS DE SECCIONES GENERALES */
+        /* SECCIONES COMPARTIDAS */
         section {
             padding: 100px 10%;
         }
 
         .titulo-seccion {
             font-family: 'Playfair Display', serif;
-            font-size: 38px;
+            font-size: 40px;
             color: var(--verde-olivo);
             text-align: center;
             margin-bottom: 15px;
@@ -177,22 +207,22 @@
         }
 
         .subtitulo-seccion {
-            font-size: 15px;
+            font-size: 16px;
             color: var(--texto-suave);
             text-align: center;
-            max-width: 600px;
+            max-width: 650px;
             margin: 0 auto 60px auto;
             font-weight: 400;
         }
 
-        /* SECCIÓN QUIÉNES SOMOS */
+        /* SECCIÓN CONÓCENOS */
         #nosotros {
-            background-color: var(--beige-premium);
+            background-color: var(--beige-balance);
         }
 
         .grid-nosotros {
             display: flex;
-            gap: 50px;
+            gap: 60px;
             align-items: center;
             max-width: 1100px;
             margin: 0 auto;
@@ -204,15 +234,15 @@
 
         .contenido-nosotros h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 24px;
+            font-size: 26px;
             color: var(--verde-oscuro);
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
         .contenido-nosotros p {
             margin-bottom: 25px;
-            color: var(--texto-oscuro);
             font-weight: 300;
+            font-size: 16px;
         }
 
         .mision-vision {
@@ -225,47 +255,146 @@
         .bloque-mv {
             background-color: var(--blanco-puro);
             padding: 30px;
-            border-radius: 4px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
-            border-left: 3px solid var(--verde-olivo);
+            border-radius: 6px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+            border-top: 4px solid var(--verde-olivo);
         }
 
-        /* SECCIÓN SERVICIOS */
-        .grid-servicios {
+        .bloque-mv h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            color: var(--verde-olivo);
+            margin-bottom: 10px;
+        }
+
+        /* GALERÍA DE IMÁGENES DECORATIVAS (MOSAICO PREMIUM) */
+        .galeria-decorativa {
+            padding: 40px 10% 100px 10%;
+            background-color: var(--beige-balance);
+        }
+
+        .grid-galeria {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
             max-width: 1200px;
             margin: 0 auto;
         }
 
+        .item-galeria {
+            position: relative;
+            height: 350px;
+            overflow: hidden;
+            border-radius: 6px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .item-galeria img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .item-galeria:hover img {
+            transform: scale(1.06);
+        }
+
+        .item-galeria .info-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            color: white;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* SECCIÓN SEPARADORA PANORÁMICA (IMAGEN FIJA INTERMEDIA) */
+        .separador-imagen {
+            height: 450px;
+            background-image: linear-gradient(rgba(59, 76, 32, 0.4), rgba(59, 76, 32, 0.4)), 
+                              url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=1500&q=80');
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        .separador-texto h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 40px;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+
+        .separador-texto p {
+            font-size: 18px;
+            font-weight: 300;
+            letter-spacing: 1px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* SECCIÓN SERVICIOS (BASADO EN TUS FLYERS) */
+        .grid-servicios {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto 60px auto;
+        }
+
         .tarjeta-servicio {
             background-color: var(--blanco-puro);
-            padding: 40px 30px;
+            padding: 45px 30px;
             text-align: center;
-            border-radius: 4px;
+            border-radius: 6px;
             transition: all 0.3s ease;
-            border: 1px solid rgba(0,0,0,0.04);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.01);
+            border: 1px solid rgba(0,0,0,0.05);
+            box-shadow: 0 5px 25px rgba(0,0,0,0.01);
         }
 
         .tarjeta-servicio:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(85, 107, 79, 0.08);
-            border-color: rgba(85, 107, 47, 0.15);
+            box-shadow: 0 15px 35px rgba(85, 107, 79, 0.1);
+            border-color: rgba(85, 107, 47, 0.2);
         }
 
-        .tarjeta-servicio i {
-            font-size: 40px;
+        .tarjeta-servicio .icono-borde {
+            width: 80px;
+            height: 80px;
+            background-color: var(--beige-balance);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 25px auto;
             color: var(--verde-olivo);
-            margin-bottom: 25px;
+            font-size: 32px;
+            transition: background-color 0.3s;
+        }
+
+        .tarjeta-servicio:hover .icono-borde {
+            background-color: var(--verde-olivo);
+            color: white;
         }
 
         .tarjeta-servicio h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 20px;
+            font-size: 21px;
             margin-bottom: 15px;
             color: var(--texto-oscuro);
+            font-weight: 600;
         }
 
         .tarjeta-servicio p {
@@ -274,49 +403,135 @@
             font-weight: 300;
         }
 
-        /* SECCIÓN CONTACTO Y PIE DE PÁGINA */
+        /* SECCIÓN BENEFICIOS */
+        .contenedor-beneficios {
+            max-width: 800px;
+            margin: 40px auto 0 auto;
+            background-color: var(--beige-balance);
+            padding: 40px 60px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .contenedor-beneficios h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            color: var(--verde-oscuro);
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+        }
+
+        .listado-beneficios {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .item-beneficio {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-weight: 500;
+            font-size: 15px;
+            color: var(--texto-oscuro);
+        }
+
+        .item-beneficio i {
+            color: var(--verde-olivo);
+            font-size: 18px;
+        }
+
+        /* SECCIÓN CONTACTO COMPLETA */
         #contacto {
             background-color: var(--texto-oscuro);
             color: var(--blanco-puro);
-            text-align: center;
+            padding-bottom: 60px;
         }
 
         #contacto .titulo-seccion {
             color: var(--blanco-puro);
         }
 
-        .info-contacto {
-            max-width: 600px;
-            margin: 0 auto 40px auto;
+        .contenido-contacto {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            max-width: 1100px;
+            margin: 50px auto 0 auto;
+            text-align: left;
         }
 
-        .info-contacto p {
-            margin-bottom: 15px;
-            font-size: 16px;
+        .bloque-info-contacto h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            margin-bottom: 25px;
+            color: var(--beige-balance);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 10px;
+        }
+
+        .linea-info {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 25px;
+            font-size: 15px;
             font-weight: 300;
+            color: rgba(255, 255, 255, 0.85);
         }
 
-        .info-contacto i {
-            margin-right: 10px;
+        .linea-info i {
+            font-size: 20px;
             color: var(--verde-claro);
+            margin-top: 3px;
         }
 
-        .redes-sociales a {
+        .linea-info strong {
+            color: white;
+            font-weight: 500;
+        }
+
+        /* Mapa de Google Estético */
+        .bloque-mapa {
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            height: 320px;
+        }
+
+        .redes-sociales-footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .redes-sociales-footer p {
+            font-size: 14px;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .redes-sociales-footer a {
             color: var(--blanco-puro);
-            font-size: 22px;
+            font-size: 24px;
             margin: 0 15px;
-            transition: color 0.3s;
+            transition: color 0.3s, transform 0.3s;
+            display: inline-block;
         }
 
-        .redes-sociales a:hover {
+        .redes-sociales-footer a:hover {
             color: var(--verde-claro);
+            transform: translateY(-3px);
         }
 
         footer {
-            background-color: #1E2418;
-            color: rgba(255,255,255,0.4);
+            background-color: #1A2015;
+            color: rgba(255,255,255,0.3);
             text-align: center;
-            padding: 20px;
+            padding: 25px;
             font-size: 12px;
             font-weight: 300;
             letter-spacing: 1px;
@@ -335,8 +550,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 30px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            font-size: 32px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
             z-index: 1000;
             transition: all 0.3s ease;
             text-decoration: none;
@@ -347,32 +562,45 @@
             background-color: #20BA5A;
         }
 
-        /* Diseño Responsivo para Celulares */
-        @media (max-width: 768px) {
+        /* Diseño Responsivo Celulares */
+        @media (max-width: 900px) {
             header { padding: 15px 5%; flex-direction: column; gap: 10px; }
-            nav a { margin: 0 10px; font-size: 11px; }
-            .hero h1 { font-size: 40px; }
-            .hero p { font-size: 15px; }
+            nav a { margin: 0 12px; font-size: 11px; }
+            .nav-redes { display: none; }
+            .hero h1 { font-size: 42px; }
             .grid-nosotros { flex-direction: column; }
             .mision-vision { grid-template-columns: 1fr; }
+            .grid-galeria { grid-template-columns: 1fr; }
+            .item-galeria { height: 265px; }
+            .contenido-contacto { grid-template-columns: 1fr; gap: 30px; }
             section { padding: 70px 5%; }
+            .galeria-decorativa { padding: 20px 5% 70px 5%; }
         }
     </style>
 </head>
 <body>
 
-    <!-- MENÚ DE NAVEGACIÓN -->
+    <!-- MENÚ SUPERIOR -->
     <header>
-        <a href="#inicio" class="logo">BALANCE</a>
+        <a href="#inicio" class="logo-contenedor">
+            <span class="logo-texto">BALANCE</span>
+        </a>
         <nav>
             <a href="#inicio">Inicio</a>
             <a href="#nosotros">Conócenos</a>
             <a href="#servicios">Servicios</a>
-            <a href="#contacto">Contacto</a>
+            <a href="#contacto">Ubicación y Citas</a>
+            
+            <!-- Iconos de Redes arriba a la derecha -->
+            <div class="nav-redes">
+                <!-- Reemplazar los # por los enlaces reales de tus páginas -->
+                <a href="https://www.instagram.com/balance_terapiafisica?igsh=ZjE5Mzlpbnp4MmU2" target="_blank" title="Síguenos en Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=61591173515623" target="_blank" title="Síguenos en Facebook"><i class="fa-brands fa-facebook"></i></a>
+            </div>
         </nav>
     </header>
 
-    <!-- INICIO (CON VIDEO DE FONDO NATURISTA) -->
+    <!-- BIENVENIDA CON VIDEO -->
     <section id="inicio" class="hero">
         <video autoplay loop muted playsinline class="hero-video">
             <source src="https://assets.mixkit.co/videos/preview/mixkit-forest-stream-in-the-sunlight-529-large.mp4" type="video/mp4">
@@ -381,89 +609,159 @@
         <div class="hero-overlay"></div>
 
         <h1>Balance</h1>
-        <p>Centro de Terapia Física y Rehabilitación Integral. Recupera tu bienestar, sana tu cuerpo y vuelve a tu ritmo natural.</p>
-        <!-- Reemplaza el número de abajo por tu número de WhatsApp real -->
-        <a href="https://wa.me/593999999999?text=Hola%20Balance,%20me%20gustar%C3%ADa%20agendar%20una%20cita%20m%C3%A9dica." target="_blank" class="btn-principal">Agendar Cita</a>
+        <h2>Masajes y Terapia Física</h2>
+        <p>Tu bienestar es nuestra prioridad. Recupera tu equilibrio, tu fuerza y tu bienestar hoy mismo.</p>
+        <a href="https://wa.me/593994440358?text=Hola%20Balance,%20me%20gustar%C3%ADa%20agendar%20una%20cita%20m%C3%A9dica." target="_blank" class="btn-principal">Agendar Cita Hoy</a>
     </section>
 
-    <!-- QUIÉNES SOMOS -->
+    <!-- CONÓCENOS -->
     <section id="nosotros">
-        <h2 class="titulo-seccion">Nuestro Enfoque</h2>
-        <p class="subtitulo-seccion">Creemos en una rehabilitación pulcra, profesional y profundamente conectada con la recuperación natural de tu cuerpo.</p>
+        <h2 class="titulo-seccion">Quiénes Somos</h2>
+        <p class="subtitulo-seccion">Un espacio profesional con ambiente relajante y atención 100% personalizada por profesionales certificados.</p>
         
         <div class="grid-nosotros">
             <div class="contenido-nosotros">
-                <h3>Terapia con Propósito</h3>
-                <p>En Balance, nos dedicamos a ofrecer soluciones personalizadas en fisioterapia y rehabilitación. Nuestro espacio está diseñado para brindarte un ambiente de paz, limpieza y armonía donde cada tratamiento se ejecuta bajo los más altos estándares premium.</p>
+                <h3>En Balance tenemos la solución para ti</h3>
+                <p>Somos un centro especializado en salud corporal y relajación en Quito. Nos dedicamos a dar el primer paso junto a ti hacia una vida libre de dolor, devolviéndole a tu cuerpo la movilidad y vitalidad que se merece en un espacio armonioso, limpio y premium.</p>
                 
                 <div class="mision-vision">
                     <div class="bloque-mv">
-                        <h3>Misión</h3>
-                        <p>Restaurar la máxima funcionalidad y aliviar el dolor de nuestros pacientes a través de técnicas de vanguardia y un trato humano excepcional.</p>
+                        <h4>Misión</h4>
+                        <p>Aliviar el dolor y restaurar el equilibrio físico de nuestros pacientes mediante atención personalizada y masajes terapéuticos de excelencia.</p>
                     </div>
                     <div class="bloque-mv">
-                        <h3>Visión</h3>
-                        <p>Ser el centro de rehabilitación referente en la región, reconocido por nuestra calidad médica, pulcritud y enfoque integral de salud.</p>
+                        <h4>Visión</h4>
+                        <p>Ser el centro de fisioterapia y masajes líder en la ciudad, reconocido por un ambiente pulcro, natural y de máxima confianza.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SERVICIOS -->
+    <!-- MÓDULO DE IMÁGENES DECORATIVAS EXTRA -->
+    <div class="galeria-decorativa">
+        <div class="grid-galeria">
+            <div class="item-galeria">
+                <img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?auto=format&fit=crop&w=600&q=80" alt="Masajes de Relajación">
+                <div class="info-overlay">Masajes y Relajación</div>
+            </div>
+            <div class="item-galeria">
+                <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=600&q=80" alt="Terapia Física">
+                <div class="info-overlay">Terapia Física y Movilidad</div>
+            </div>
+            <div class="item-galeria">
+                <img src="https://images.unsplash.com/photo-1519828931398-c4803df6807a?auto=format&fit=crop&w=600&q=80" alt="Rehabilitación Profesional">
+                <div class="info-overlay">Rehabilitación Integral</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- IMAGEN FIJA SEPARADORA INTERMEDIA -->
+    <div class="separador-imagen">
+        <div class="separador-texto">
+            <h3>Un espacio para sanar</h3>
+            <p>Atención personalizada orientada a resultados desde la primera sesión.</p>
+        </div>
+    </div>
+
+    <!-- NUESTROS SERVICIOS OFICIALES -->
     <section id="servicios">
-        <h2 class="titulo-seccion">Servicios Especializados</h2>
-        <p class="subtitulo-seccion">Tratamientos diseñados para cada etapa de tu recuperación física.</p>
+        <h2 class="titulo-seccion">Nuestros Servicios</h2>
+        <p class="subtitulo-seccion">Tratamientos diseñados exactamente para aliviar el dolor, recuperar tu fuerza y mejorar tu calidad de vida.</p>
         
         <div class="grid-servicios">
+            <!-- 1. Masaje Terapéutico -->
             <div class="tarjeta-servicio">
-                <i class="fa-solid fa-person-walking-wounded"></i>
-                <h3>Rehabilitación Física</h3>
-                <p>Tratamiento integral para recuperar la movilidad de articulaciones y músculos tras lesiones o procesos degenerativos.</p>
+                <div class="icono-borde"><i class="fa-solid fa-hands-massage"></i></div>
+                <h3>Masaje Terapéutico</h3>
+                <p>Alivia el dolor muscular profunda, libera tensiones acumuladas y reduce drásticamente los niveles de estrés diario.</p>
             </div>
+            <!-- 2. Terapia Física -->
             <div class="tarjeta-servicio">
-                <i class="fa-solid fa-crutches"></i>
-                <h3>Terapia Post-Lesión</h3>
-                <p>Acompañamiento especializado para atletas y pacientes en su regreso seguro a las actividades diarias o deportivas.</p>
+                <div class="icono-borde"><i class="fa-solid fa-person-walking"></i></div>
+                <h3>Terapia Física</h3>
+                <p>Recupera de manera profesional tu movilidad natural, tu fuerza muscular y la funcionalidad completa de tu cuerpo.</p>
             </div>
+            <!-- 3. Rehabilitación -->
             <div class="tarjeta-servicio">
-                <i class="fa-solid fa-child"></i>
-                <h3>Balance Corporal</h3>
-                <p>Corrección postural, reeducación del movimiento y ejercicios enfocados en restablecer el equilibrio de la columna.</p>
+                <div class="icono-borde"><i class="fa-solid fa-person-accessibility"></i></div>
+                <h3>Rehabilitación</h3>
+                <p>Tratamientos altamente personalizados diseñados específicamente para la recuperación de lesiones complejas y post-cirugías.</p>
             </div>
+            <!-- 4. Fortalecimiento -->
             <div class="tarjeta-servicio">
-                <i class="fa-solid fa-hands-holding-child"></i>
-                <h3>Terapia Manual</h3>
-                <p>Técnicas terapéuticas premium aplicadas con las manos para relajar tejidos, liberar tensión profunda y aliviar contracturas.</p>
+                <div class="icono-borde"><i class="fa-solid fa-dumbbell"></i></div>
+                <h3>Fortalecimiento</h3>
+                <p>Mejora sustancialmente tu postura corporal, el equilibrio motriz y optimiza de forma segura tu desempeño físico.</p>
+            </div>
+        </div>
+
+        <!-- MÓDULO DE BENEFICIOS EXTRACTO FLYER -->
+        <div class="contenedor-beneficios">
+            <h3>Beneficios de Atenderte en Balance</h3>
+            <div class="listado-beneficios">
+                <div class="item-beneficio"><i class="fa-solid fa-circle-check"></i> Menos dolor</div>
+                <div class="item-beneficio"><i class="fa-solid fa-circle-check"></i> Más movilidad</div>
+                <div class="item-beneficio"><i class="fa-solid fa-circle-check"></i> Más fuerza</div>
+                <div class="item-beneficio"><i class="fa-solid fa-circle-check"></i> Mejor postura</div>
+                <div class="item-beneficio"><i class="fa-solid fa-circle-check"></i> Más bienestar</div>
             </div>
         </div>
     </section>
 
-    <!-- CONTACTO -->
+    <!-- UBICACIÓN, CONTACTO Y REDES -->
     <section id="contacto">
-        <h2 class="titulo-seccion">Comienza tu Recuperación</h2>
-        <p class="subtitulo-seccion" style="color: rgba(255,255,255,0.7);">Estamos listos para atenderte. Reserva tu espacio o visítanos.</p>
+        <h2 class="titulo-seccion">Visítanos o Agenda hoy</h2>
+        <p class="subtitulo-seccion" style="color: rgba(255,255,255,0.6);">Separa tu cita previa y da el primer paso hacia una vida sin dolor.</p>
         
-        <div class="info-contacto">
-            <p><i class="fa-solid fa-location-dot"></i> Quito, Ecuador</p>
-            <p><i class="fa-solid fa-clock"></i> Lunes a Viernes: 8:00 AM - 7:00 PM | Sábados: 9:00 AM - 1:00 PM</p>
-            <p><i class="fa-solid fa-envelope"></i> contacto@balanceterapia.com</p>
+        <div class="contenido-contacto">
+            <!-- Datos oficiales textuales -->
+            <div class="bloque-info-contacto">
+                <h3>Datos de Contacto</h3>
+                <div class="linea-info">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <p><strong>Dirección:</strong><br>Edificio San Francisco, Subsuelo 2.<br>Av. 6 de Diciembre E9-39 y Luis Cordero Esquina.<br>Quito, Ecuador.</p>
+                </div>
+                <div class="linea-info">
+                    <i class="fa-solid fa-clock"></i>
+                    <p><strong>Horarios de Atención:</strong><br>Lunes a Viernes: 8:00 AM - 7:00 PM<br>Sábados: 9:00 AM - 1:00 PM</p>
+                </div>
+                <div class="linea-info">
+                    <i class="fa-solid fa-envelope"></i>
+                    <p><strong>Correo Electrónico:</strong><br>balance.terapiafisica@gmail.com</p>
+                </div>
+            </div>
+
+            <!-- Mapa Estático de la Zona Comercial (6 de diciembre y luis cordero) -->
+            <div class="bloque-mapa">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.790448102175!2d-78.4930129!3d-0.2023531!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d59a107ef4e4b5%3A0x2bf7403b9b4f23b7!2sAv.%206%20de%20Diciembre%20%26%20Luis%20Cordero%2C%20Quito%20170143!5e0!3m2!1ses!2sec!4v1710000000000!5m2!1ses!2sec" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
         </div>
 
-        <div class="redes-sociales">
-            <!-- Coloca aquí los enlaces a tus páginas reales de Facebook e Instagram -->
-            <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-            <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <!-- REDES SOCIALES PARA INSTAGRAM Y FACEBOOK -->
+        <div class="redes-sociales-footer">
+            <p>SÍGUENOS EN NUESTRAS REDES SOCIALES</p>
+            <!-- Reemplaza el símbolo '#' entre las comillas por el link real de tu Instagram y Facebook -->
+            <a href="https://www.instagram.com/balance_terapiafisica?igsh=ZjE5Mzlpbnp4MmU2" target="_blank" title="Instagram de Balance"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61591173515623" target="_blank" title="Facebook de Balance"><i class="fa-brands fa-facebook"></i></a>
         </div>
     </section>
 
+    <!-- PIE DE PÁGINA -->
     <footer>
-        <p>&copy; 2026 Balance - Terapia Física y Rehabilitación. Todos los derechos reservados.</p>
+        <p>&copy; 2026 Balance - Masajes y Terapia Física. Todos los derechos reservados.</p>
     </footer>
 
-    <!-- BOTÓN FLOTANTE DE WHATSAPP (SIEMPRE VISIBLE) -->
-    <!-- Reemplaza el número de abajo por tu número de WhatsApp real (Debe empezar con el código de país, p.ej. 593 para Ecuador) -->
-    <a href="https://wa.me/593994440358?text=Hola%20Balance,%20me%20gustar%C3%ADa%20solicitar%20informaci%C3%B3n%20sobre%20las%20terapias." class="btn-whatsapp" target="_blank">
+    <!-- BOTÓN FLOTANTE DE WHATSAPP CON TU NÚMERO OFICIAL -->
+    <a href="https://wa.me/593994440358?text=Hola%20Balance,%20me%20gustar%C3%ADa%20solicitar%20informaci%C3%B3n%20sobre%20los%20servicios." class="btn-whatsapp" target="_blank" title="Escríbenos por WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
