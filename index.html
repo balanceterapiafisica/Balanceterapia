@@ -53,14 +53,8 @@
         <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
             <!-- Logo area -->
             <a href="#" class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-full bg-brand-dark flex items-center justify-center p-1 border border-brand-gold">
-                    <svg viewBox="0 0 100 100" class="w-full h-full text-brand-bg" fill="currentColor">
-                        <!-- Ícono simplificado de Balance -->
-                        <path d="M50,22 C52.5,22 52.5,26 50,26 C47.5,26 47.5,22 50,22 Z" />
-                        <path d="M50,28 C57,28 62,23 66,31 C59,37 55,34 50,34 C45,34 41,37 34,31 C38,23 43,28 50,28 Z" />
-                        <path d="M50,34 Q53,42 50,54 Q46,62 52,72" stroke="currentColor" stroke-width="3" stroke-linecap="round" fill="none"/>
-                        <path d="M50,13 Q52,17 50,19 Q48,17 50,13 Z" fill="#CBB593"/>
-                    </svg>
+                <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center p-0.5 border border-brand-gold overflow-hidden shrink-0 shadow-sm">
+                    <img src="logo.png" alt="BALANCE Logo" class="w-full h-full object-contain" onerror="this.onerror=null; this.src='https://placehold.co/100x100/FAF8F5/2C3E35?text=B';">
                 </div>
                 <div>
                     <span class="font-serif font-bold text-lg text-brand-dark tracking-wider block">BALANCE</span>
@@ -384,7 +378,7 @@
                                 Av. 6 de Diciembre y Colón. Edificio Premium.<br>Quito, Ecuador.
                             </p>
                             <!-- Enlace directo real de Google Maps -->
-                            <a href="https://maps.app.goo.gl/XcCS7cS1LdKC9bbTA" target="_blank" class="text-brand-sage hover:text-brand-dark text-sm font-semibold inline-flex items-center gap-1.5 mt-2.5 transition-all duration-300 transform hover:translate-x-1">
+                            <a href="https://maps.app.goo.gl/XcCS7cS1LdKC9bbTA" target="_blank" rel="noopener noreferrer" class="text-brand-sage hover:text-brand-dark text-sm font-semibold inline-flex items-center gap-1.5 mt-2.5 transition-all duration-300 transform hover:translate-x-1">
                                 <i class="fa-solid fa-diamond-turn-right text-brand-gold"></i> Cómo llegar en Google Maps <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
                             </a>
                         </div>
@@ -427,9 +421,11 @@
                     referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
                 <!-- Placa interactiva flotante sobre el mapa -->
-                <div class="absolute bottom-4 right-4 bg-brand-dark/95 backdrop-blur-sm text-white px-5 py-3 rounded-xl text-xs flex items-center gap-2 border border-brand-gold/30 shadow-lg transition-all duration-300 group-hover:scale-105">
-                    <span class="font-medium">¿Vienes en auto? Tenemos parqueadero.</span>
-                    <a href="https://maps.app.goo.gl/XcCS7cS1LdKC9bbTA" target="_blank" class="bg-brand-gold text-brand-dark px-3 py-1.5 rounded-lg font-bold hover:bg-brand-goldDark transition-colors">Abrir GPS</a>
+                <div class="absolute bottom-4 left-4 right-4 sm:left-auto sm:right-4 bg-brand-dark/95 backdrop-blur-sm text-white px-5 py-4 rounded-xl text-xs flex flex-col sm:flex-row items-center justify-between gap-3 border border-brand-gold/30 shadow-lg transition-all duration-300 group-hover:scale-[1.01] z-20">
+                    <span class="font-medium text-center sm:text-left">¿Vienes en auto? Tenemos parqueadero gratuito.</span>
+                    <a href="https://maps.app.goo.gl/XcCS7cS1LdKC9bbTA" target="_blank" rel="noopener noreferrer" class="bg-brand-gold text-brand-dark px-4 py-2 rounded-lg font-bold hover:bg-brand-goldDark transition-colors text-center w-full sm:w-auto shrink-0 inline-flex items-center justify-center gap-1.5">
+                        <i class="fa-solid fa-diamond-turn-right"></i> Abrir GPS
+                    </a>
                 </div>
             </div>
         </div>
