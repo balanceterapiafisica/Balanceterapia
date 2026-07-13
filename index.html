@@ -48,17 +48,16 @@
 </head>
 <body class="bg-brand-bg font-sans text-brand-neutral antialiased selection:bg-brand-gold selection:text-white">
 
-    <!-- Menú de Navegación -->
-    <nav class="sticky top-0 z-50 bg-brand-bg/90 backdrop-blur-md border-b border-brand-sage/10 py-4 transition-all duration-300">
+    <nav class="sticky top-0 z-50 bg-brand-bg/90 backdrop-blur-md border-b border-brand-sage/10 py-3 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
-            <!-- Logo area -->
-            <a href="#" class="flex items-center gap-3">
-                <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center p-0.5 border border-brand-gold overflow-hidden shrink-0 shadow-sm">
-                    <img src="logo.png" alt="BALANCE Logo" class="w-full h-full object-contain" onerror="this.onerror=null; this.src='https://placehold.co/100x100/FAF8F5/2C3E35?text=B';">
+            <!-- Logo area (Agrandado de 12 a 20 para máxima legibilidad) -->
+            <a href="#" class="flex items-center gap-4">
+                <div class="w-20 h-20 md:w-24 md:h-24 rounded-full bg-white flex items-center justify-center border border-brand-gold overflow-hidden shrink-0 shadow-md transition-transform duration-300 hover:scale-105">
+                    <img src="logo.png" alt="BALANCE Logo" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/150x150/FAF8F5/2C3E35?text=BALANCE';">
                 </div>
                 <div>
-                    <span class="font-serif font-bold text-lg text-brand-dark tracking-wider block">BALANCE</span>
-                    <span class="text-[9px] uppercase tracking-[0.2em] text-brand-sage font-semibold -mt-1 block">Terapia Física</span>
+                    <span class="font-serif font-bold text-xl md:text-2xl text-brand-dark tracking-wider block">BALANCE</span>
+                    <span class="text-[10px] md:text-xs uppercase tracking-[0.2em] text-brand-sage font-semibold -mt-1 block">Terapia Física</span>
                 </div>
             </a>
 
@@ -91,7 +90,6 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <header class="relative hero-gradient min-h-[90vh] flex items-center justify-center text-white px-6">
         <div class="max-w-5xl mx-auto text-center space-y-8 z-10 py-16">
             <span class="inline-block border border-brand-gold text-brand-gold uppercase tracking-[0.3em] text-xs font-semibold px-4 py-2 rounded-full bg-brand-dark/40 backdrop-blur-sm">
@@ -119,7 +117,6 @@
         </div>
     </header>
 
-    <!-- Sección de Valor/Filosofía -->
     <section id="filosofia" class="py-24 px-6 max-w-7xl mx-auto">
         <div class="grid md:grid-cols-2 grid-cols-1 gap-16 items-center">
             <!-- Columna de imagen del Consultorio Real con estilo flotante -->
@@ -170,7 +167,6 @@
         </div>
     </section>
 
-    <!-- Sección de Servicios -->
     <section id="servicios" class="bg-brand-dark text-white py-24 px-6">
         <div class="max-w-7xl mx-auto space-y-16">
             <div class="text-center max-w-2xl mx-auto space-y-4">
@@ -250,7 +246,6 @@
         </div>
     </section>
 
-    <!-- Sección de Test de Bienestar Interactivo -->
     <section id="test" class="py-24 px-6 bg-[#F3ECE2]/50">
         <div class="max-w-4xl mx-auto bg-white rounded-3xl premium-shadow border border-brand-sage/10 overflow-hidden">
             <div class="grid md:grid-cols-5 grid-cols-1">
@@ -356,7 +351,6 @@
         </div>
     </section>
 
-    <!-- Sección de Ubicación y Contacto -->
     <section id="ubicacion" class="py-24 px-6 max-w-7xl mx-auto space-y-16">
         <div class="text-center max-w-xl mx-auto space-y-4">
             <span class="text-brand-sage font-semibold uppercase tracking-[0.2em] text-xs block">Visítanos en Quito</span>
@@ -375,9 +369,9 @@
                         <div>
                             <h4 class="font-bold text-brand-dark mb-1">Dirección del Consultorio</h4>
                             <p class="text-sm text-brand-neutral/90 leading-relaxed">
-                                Av. 6 de Diciembre y Colón. Edificio Premium.<br>Quito, Ecuador.
+                                Av. 6 de Diciembre y Luis Cordero E9-39.<br>Quito, Ecuador.
                             </p>
-                            <!-- Enlace directo real de Google Maps -->
+                            <!-- Enlace real de Google Maps -->
                             <a href="https://maps.app.goo.gl/XcCS7cS1LdKC9bbTA" target="_blank" rel="noopener noreferrer" class="text-brand-sage hover:text-brand-dark text-sm font-semibold inline-flex items-center gap-1.5 mt-2.5 transition-all duration-300 transform hover:translate-x-1">
                                 <i class="fa-solid fa-diamond-turn-right text-brand-gold"></i> Cómo llegar en Google Maps <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
                             </a>
@@ -411,21 +405,73 @@
                 </div>
             </div>
 
-            <!-- Columna Mapa Interactivo de Google Maps (Ubicación Colón y 6 de Dic) -->
-            <div class="lg:col-span-7 h-[450px] rounded-3xl overflow-hidden shadow-xl border border-brand-sage/10 relative bg-brand-sage/10 group">
-                <iframe 
-                    class="w-full h-full border-none"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m13!1m3!1d3989.790473950222!2d-78.49129528574304!3d-0.20364999985140885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d59a72cd8abf41%3A0xc3fae30492cb9b6a!2sAv.%206%20de%20Diciembre%20%26%20Av.%20Crist%C3%B3bal%20Col%C3%B3n%2C%20Quito!5e0!3m2!1ses-419!2sec!4v1700000000000!5m2!1ses-419!2sec" 
-                    allowfullscreen="" 
-                    loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-                <!-- Placa interactiva flotante sobre el mapa -->
-                <div class="absolute bottom-4 left-4 right-4 sm:left-auto sm:right-4 bg-brand-dark/95 backdrop-blur-sm text-white px-5 py-4 rounded-xl text-xs flex flex-col sm:flex-row items-center justify-between gap-3 border border-brand-gold/30 shadow-lg transition-all duration-300 group-hover:scale-[1.01] z-20">
-                    <span class="font-medium text-center sm:text-left">¿Vienes en auto? Tenemos parqueadero gratuito.</span>
-                    <a href="https://maps.app.goo.gl/XcCS7cS1LdKC9bbTA" target="_blank" rel="noopener noreferrer" class="bg-brand-gold text-brand-dark px-4 py-2 rounded-lg font-bold hover:bg-brand-goldDark transition-colors text-center w-full sm:w-auto shrink-0 inline-flex items-center justify-center gap-1.5">
-                        <i class="fa-solid fa-diamond-turn-right"></i> Abrir GPS
+            <!-- Columna Publicación Destacada de Instagram (En vez del mapa) -->
+            <div class="lg:col-span-7 flex justify-center">
+                <!-- Tarjeta de simulación interactiva de Instagram Premium -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-2xl border border-brand-sage/10 w-full max-w-[480px] font-sans">
+                    <!-- Encabezado de la publicación -->
+                    <div class="p-4 flex items-center justify-between border-b border-brand-sage/5">
+                        <a href="https://instagram.com/balance_terapiafisica" target="_blank" class="flex items-center gap-3 group">
+                            <div class="w-10 h-10 rounded-full border border-brand-gold overflow-hidden shrink-0 bg-brand-bg">
+                                <img src="logo.png" alt="BALANCE" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/150x150/FAF8F5/2C3E35?text=B';">
+                            </div>
+                            <div>
+                                <span class="font-bold text-sm text-brand-dark block group-hover:text-brand-sage transition-colors">balance_terapiafisica</span>
+                                <span class="text-xs text-brand-neutral/70 block -mt-0.5">Av. 6 de Diciembre y Luis Cordero</span>
+                            </div>
+                        </a>
+                        <a href="https://instagram.com/balance_terapiafisica" target="_blank" class="text-brand-dark hover:text-brand-sage">
+                            <i class="fa-solid fa-ellipsis"></i>
+                        </a>
+                    </div>
+
+                    <!-- Imagen del Post (Consultorio) con link a Instagram -->
+                    <a href="https://instagram.com/balance_terapiafisica" target="_blank" class="block aspect-square relative overflow-hidden bg-brand-sage/20 group">
+                        <img src="WhatsApp Image 2026-07-09 at 12.51.21_2.jpeg" alt="Consultorio BALANCE" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&q=80&w=800'">
+                        <div class="absolute inset-0 bg-brand-dark/15 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <span class="bg-white/90 backdrop-blur-sm text-brand-dark px-4 py-2 rounded-full text-xs font-semibold shadow-md flex items-center gap-1.5">
+                                <i class="fa-brands fa-instagram text-brand-sage"></i> Ver en Instagram
+                            </span>
+                        </div>
                     </a>
+
+                    <!-- Interacciones del Post -->
+                    <div class="p-5 space-y-3.5">
+                        <div class="flex items-center justify-between text-2xl text-brand-dark">
+                            <div class="flex items-center gap-5">
+                                <button onclick="toggleInstagramHeart(this)" class="hover:scale-110 active:scale-95 transition-transform duration-200 focus:outline-none">
+                                    <i class="fa-regular fa-heart cursor-pointer"></i>
+                                </button>
+                                <a href="https://instagram.com/balance_terapiafisica" target="_blank" class="hover:scale-110 active:scale-95 transition-transform duration-200">
+                                    <i class="fa-regular fa-comment"></i>
+                                </a>
+                                <a href="https://instagram.com/balance_terapiafisica" target="_blank" class="hover:scale-110 active:scale-95 transition-transform duration-200">
+                                    <i class="fa-regular fa-paper-plane"></i>
+                                </a>
+                            </div>
+                            <a href="https://instagram.com/balance_terapiafisica" target="_blank" class="hover:scale-110 active:scale-95 transition-transform duration-200">
+                                <i class="fa-regular fa-bookmark"></i>
+                            </a>
+                        </div>
+
+                        <!-- Detalles del Post -->
+                        <div class="space-y-1.5 text-sm">
+                            <p class="font-bold text-brand-dark">
+                                Les gusta a <span id="likes-count">148</span> personas
+                            </p>
+                            <p class="text-brand-neutral/90 leading-relaxed">
+                                <span class="font-bold text-brand-dark mr-1">balance_terapiafisica</span>¿En qué porcentaje está la batería de tu cuerpo hoy? 🔋❌ El estrés y la mala postura te agotan. Agenda tu sesión de alivio hoy mismo. ✨💆‍♀️
+                            </p>
+                            <span class="text-[10px] uppercase tracking-wider text-brand-neutral/60 block pt-1">HACE 2 DÍAS</span>
+                        </div>
+
+                        <!-- Botón directo de acción -->
+                        <div class="pt-3 border-t border-brand-sage/5">
+                            <a href="https://instagram.com/balance_terapiafisica" target="_blank" class="w-full bg-brand-sage hover:bg-brand-dark text-white font-semibold py-3 rounded-xl transition-all duration-300 text-center text-xs tracking-wider uppercase inline-flex items-center justify-center gap-2">
+                                <i class="fa-brands fa-instagram text-sm"></i> Seguir en Instagram
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -460,6 +506,24 @@
 
     <!-- Lógica JavaScript del Autodiagnóstico -->
     <script>
+        // Función interactiva para dar Like al post simulado
+        let liked = false;
+        function toggleInstagramHeart(btn) {
+            const icon = btn.querySelector('i');
+            const likesCount = document.getElementById('likes-count');
+            let currentLikes = parseInt(likesCount.innerText);
+            
+            if (!liked) {
+                icon.className = 'fa-solid fa-heart text-red-500';
+                likesCount.innerText = currentLikes + 1;
+                liked = true;
+            } else {
+                icon.className = 'fa-regular fa-heart';
+                likesCount.innerText = currentLikes - 1;
+                liked = false;
+            }
+        }
+
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
             const icon = document.getElementById('menu-icon');
