@@ -1,52 +1,597 @@
-<!-- ... existing code ... -->
-            <!-- Mobile Menu Overlay -->
-            <div id="mobile-menu" class="hidden md:hidden bg-brand-bg border-t border-brand-sage/10 absolute top-full left-0 w-full p-6 space-y-4 shadow-xl">
-                <a href="#servicios" onclick="toggleMobileMenu()" class="block font-medium text-brand-dark hover:text-brand-sage">Servicios</a>
-                <a href="#filosofia" onclick="toggleMobileMenu()" class="block font-medium text-brand-dark hover:text-brand-sage">Nosotros</a>
-                <a href="#test" onclick="toggleMobileMenu()" class="block font-medium text-brand-dark hover:text-brand-sage">¿Qué necesitas?</a>
-                <a href="#ubicacion" onclick="toggleMobileMenu()" class="block font-medium text-brand-dark hover:text-brand-sage">Ubicación</a>
-                <a href="https://wa.me/593994440358?text=Hola%20Balance,%20quiero%20agendar%20una%20sesión." target="_blank" class="block bg-brand-dark text-center text-white font-medium py-3 rounded-full border border-brand-gold/30">
-                    Reserva por WhatsApp
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BALANCE | Fisioterapia, Masajes y Bienestar en Quito</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Playfair Display & Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            bg: '#FAF8F5',       /* Crema cálido arena */
+                            dark: '#2C3E35',     /* Verde oliva oscuro */
+                            sage: '#5E8C7A',     /* Sage Green / Oliva suave */
+                            gold: '#CBB593',     /* Dorado arena premium */
+                            goldDark: '#BBA381',
+                            neutral: '#4A5D53'   /* Oliva apagado para textos */
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Montserrat"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .premium-shadow {
+            box-shadow: 0 20px 40px -15px rgba(44, 62, 53, 0.08);
+        }
+        .hero-gradient {
+            background: linear-gradient(rgba(44, 62, 53, 0.8), rgba(44, 62, 53, 0.4)), url('https://images.unsplash.com/photo-1600334129128-685c5582fd35?auto=format&fit=crop&q=80&w=1920');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-brand-bg font-sans text-brand-neutral antialiased selection:bg-brand-gold selection:text-white">
+
+    <nav class="sticky top-0 z-50 bg-brand-bg/90 backdrop-blur-md border-b border-brand-sage/10 py-3 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <!-- Logo area (Agrandado de 12 a 20 para máxima legibilidad) -->
+            <a href="#" class="flex items-center gap-4">
+                <div class="w-20 h-20 md:w-24 md:h-24 rounded-full bg-white flex items-center justify-center border border-brand-gold overflow-hidden shrink-0 shadow-md transition-transform duration-300 hover:scale-105">
+                    <img src="logo.png" alt="BALANCE Logo" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/150x150/FAF8F5/2C3E35?text=BALANCE';">
+                </div>
+                <div>
+                    <span class="font-serif font-bold text-xl md:text-2xl text-brand-dark tracking-wider block">BALANCE</span>
+                    <span class="text-[10px] md:text-xs uppercase tracking-[0.2em] text-brand-sage font-semibold -mt-1 block">Terapia Física</span>
+                </div>
+            </a>
+
+            <!-- Desktop Links -->
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#servicios" class="font-medium text-brand-dark hover:text-brand-sage transition-colors">Servicios</a>
+                <a href="#filosofia" class="font-medium text-brand-dark hover:text-brand-sage transition-colors">Nosotros</a>
+                <a href="#test" class="font-medium text-brand-dark hover:text-brand-sage transition-colors">¿Qué necesitas?</a>
+                <a href="#ubicacion" class="font-medium text-brand-dark hover:text-brand-sage transition-colors">Ubicación</a>
+                <a href="https://wa.me/593994440358?text=Hola%20Balance,%20quiero%20agendar%20una%20sesión%20de%20fisioterapia/masaje." target="_blank" class="bg-brand-dark hover:bg-brand-sage text-white font-medium px-6 py-2.5 rounded-full transition-all duration-300 transform hover:scale-105 border border-brand-gold/30">
+                    Agenda tu Cita
                 </a>
             </div>
-        </nav>
 
-        <header class="relative min-h-[90vh] flex items-center justify-center text-white px-6 overflow-hidden">
-            <!-- Video de fondo en bucle (Autoplay, muted y playsinline para que funcione en móviles) -->
-            <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover z-0">
-                <source src="video.mp4" type="video/mp4">
-                <!-- Si el video no carga o el internet está lento, se mostrará esta imagen estética de fondo -->
-                <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?auto=format&fit=crop&q=80&w=1920" alt="Fondo alternativo BALANCE" class="absolute inset-0 w-full h-full object-cover">
-            </video>
+            <!-- Mobile Menu Button -->
+            <button onclick="toggleMobileMenu()" class="md:hidden text-brand-dark text-2xl focus:outline-none">
+                <i id="menu-icon" class="fa-solid fa-bars-staggered"></i>
+            </button>
+        </div>
 
-            <!-- Capa de sombra (Overlay) para unificar colores y asegurar la legibilidad del texto -->
-            <div class="absolute inset-0 bg-gradient-to-b from-brand-dark/90 via-brand-dark/70 to-brand-dark/90 z-10"></div>
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-bg border-t border-brand-sage/10 absolute top-full left-0 w-full p-6 space-y-4 shadow-xl">
+            <a href="#servicios" onclick="toggleMobileMenu()" class="block font-medium text-brand-dark hover:text-brand-sage">Servicios</a>
+            <a href="#filosofia" onclick="toggleMobileMenu()" class="block font-medium text-brand-dark hover:text-brand-sage">Nosotros</a>
+            <a href="#test" onclick="toggleMobileMenu()" class="block font-medium text-brand-dark hover:text-brand-sage">¿Qué necesitas?</a>
+            <a href="#ubicacion" onclick="toggleMobileMenu()" class="block font-medium text-brand-dark hover:text-brand-sage">Ubicación</a>
+            <a href="https://wa.me/593994440358?text=Hola%20Balance,%20quiero%20agendar%20una%20sesión." target="_blank" class="block bg-brand-dark text-center text-white font-medium py-3 rounded-full border border-brand-gold/30">
+                Reserva por WhatsApp
+            </a>
+        </div>
+    </nav>
 
-            <div class="max-w-5xl mx-auto text-center space-y-8 z-20 py-16">
-                <span class="inline-block border border-brand-gold text-brand-gold uppercase tracking-[0.3em] text-xs font-semibold px-4 py-2 rounded-full bg-brand-dark/40 backdrop-blur-sm animate-pulse">
-                    Fisioterapia & Masajes Premium en Quito
-                </span>
-                <h1 class="font-serif text-5xl md:text-7xl font-bold tracking-tight leading-tight">
-                    ¿Tu cuerpo te está pidiendo un <span class="text-brand-gold italic">respiro</span> a gritos?
-                </h1>
-                <p class="font-light text-lg md:text-xl max-w-2xl mx-auto text-brand-bg/90 leading-relaxed">
-                    No normalices vivir con dolor ni estrés. Recupera la vitalidad y ligereza de tu cuerpo con terapia física clínica y masajes profundos de desconexión.
+    <header class="relative hero-gradient min-h-[90vh] flex items-center justify-center text-white px-6">
+        <div class="max-w-5xl mx-auto text-center space-y-8 z-10 py-16">
+            <span class="inline-block border border-brand-gold text-brand-gold uppercase tracking-[0.3em] text-xs font-semibold px-4 py-2 rounded-full bg-brand-dark/40 backdrop-blur-sm">
+                Fisioterapia & Masajes Premium en Quito
+            </span>
+            <h1 class="font-serif text-5xl md:text-7xl font-bold tracking-tight leading-tight">
+                Alivio del dolor, recuperación y <span class="text-brand-gold italic">bienestar</span>.
+            </h1>
+            <p class="font-light text-lg md:text-xl max-w-2xl mx-auto text-brand-bg/90 leading-relaxed">
+                No normalices vivir con dolor ni estrés. Recupera la vitalidad y ligereza de tu cuerpo con terapia física clínica y masajes profundos de desconexión.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+                <a href="https://wa.me/593994440358?text=Hola%20Balance,%20me%20gustaría%20agendar%20una%20sesión%20de%20evaluación." target="_blank" class="w-full sm:w-auto bg-brand-gold hover:bg-brand-goldDark text-brand-dark font-semibold px-8 py-4 rounded-full transition-all duration-300 shadow-lg shadow-brand-gold/20 flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-xl"></i> Agenda tu Sesión Ahora
+                </a>
+                <a href="#servicios" class="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white font-medium px-8 py-4 rounded-full border border-white/20 backdrop-blur-sm transition-all duration-300">
+                    Explorar Servicios
+                </a>
+            </div>
+        </div>
+        <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a href="#servicios" class="text-white/60 hover:text-white text-2xl">
+                <i class="fa-solid fa-chevron-down"></i>
+            </a>
+        </div>
+    </header>
+
+    <section id="filosofia" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-2 grid-cols-1 gap-16 items-center">
+            <!-- Columna de imagen del Consultorio Real con estilo flotante -->
+            <div class="relative">
+                <div class="absolute inset-0 bg-brand-sage/10 rounded-2xl transform translate-x-3 translate-y-3 z-0"></div>
+                <!-- Usamos una imagen real con fallback elegante -->
+                <div class="relative z-10 overflow-hidden rounded-2xl shadow-xl border border-brand-sage/10 aspect-[4/5] bg-brand-sage/20">
+                    <img src="WhatsApp Image 2026-07-09 at 12.51.21_2.jpeg" alt="Consultorio Balance" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&q=80&w=800'">
+                </div>
+                <!-- Placa decorativa flotante -->
+                <div class="absolute -bottom-6 -right-6 bg-brand-dark text-white p-6 rounded-2xl max-w-xs shadow-xl border border-brand-gold/30 z-20 hidden sm:block">
+                    <p class="font-serif text-brand-gold italic text-lg mb-1">El lujo silencioso del bienestar</p>
+                    <p class="text-xs font-light text-brand-bg/80">Camillas premium, aceites esenciales puros y atención 100% personalizada por profesionales.</p>
+                </div>
+            </div>
+
+            <!-- Columna de Texto -->
+            <div class="space-y-8">
+                <span class="text-brand-sage font-semibold uppercase tracking-[0.2em] text-xs block">Nuestra Filosofía</span>
+                <h2 class="font-serif text-4xl md:text-5xl font-bold text-brand-dark leading-tight">
+                    No somos un spa frío ni una clínica convencional.
+                </h2>
+                <p class="text-brand-neutral/90 text-lg leading-relaxed">
+                    En <strong>BALANCE</strong> entendemos que tu cuerpo es tu herramienta más valiosa. Las largas jornadas frente al computador, la fatiga del entrenamiento y el estrés diario agotan tus músculos y generan rigidez tensional. 
                 </p>
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-                    <a href="https://wa.me/593994440358?text=Hola%20Balance,%20me%20gustaría%20agendar%20una%20sesión%20de%20evaluación." target="_blank" class="w-full sm:w-auto bg-brand-gold hover:bg-brand-goldDark text-brand-dark font-semibold px-8 py-4 rounded-full transition-all duration-300 shadow-lg shadow-brand-gold/20 flex items-center justify-center gap-2">
-                        <i class="fa-brands fa-whatsapp text-xl"></i> Agenda tu Sesión Ahora
+                <p class="text-brand-neutral/90 leading-relaxed">
+                    Creamos un espacio de desconexión absoluta y terapia física clínica en Quito. Combinamos el rigor clínico para resolver dolencias de espalda y articulaciones con la relajación profunda de masajes descontracturantes y aromaterapia.
+                </p>
+                
+                <!-- Lista de beneficios rápidos -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                    <div class="flex items-start gap-3">
+                        <i class="fa-solid fa-circle-check text-brand-sage text-xl mt-0.5"></i>
+                        <div>
+                            <h4 class="font-semibold text-brand-dark">Fisioterapeutas de Salud</h4>
+                            <p class="text-sm text-brand-neutral/80">Atención profesional certificada.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <i class="fa-solid fa-circle-check text-brand-sage text-xl mt-0.5"></i>
+                        <div>
+                            <h4 class="font-semibold text-brand-dark">Sesiones a tu Medida</h4>
+                            <p class="text-sm text-brand-neutral/80">Evaluación postural antes de iniciar.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicios" class="bg-brand-dark text-white py-24 px-6">
+        <div class="max-w-7xl mx-auto space-y-16">
+            <div class="text-center max-w-2xl mx-auto space-y-4">
+                <span class="text-brand-gold font-semibold uppercase tracking-[0.25em] text-xs block">Tratamientos Especializados</span>
+                <h2 class="font-serif text-4xl md:text-5xl font-bold tracking-tight">Nuestros Servicios de Alivio</h2>
+                <div class="h-0.5 w-16 bg-brand-gold mx-auto"></div>
+                <p class="font-light text-brand-bg/80">
+                    Sesiones de terapia manual enfocadas en desintegrar nudos musculares y devolver la agilidad a tu cuerpo.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Servicio 1 -->
+                <div class="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/10 hover:border-brand-gold/30 transition-all duration-300 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-brand-gold/10 flex items-center justify-center border border-brand-gold/30">
+                            <i class="fa-solid fa-hand-sparkles text-brand-gold text-2xl"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold">Masaje Descontracturante</h3>
+                        <p class="text-sm font-light text-brand-bg/70 leading-relaxed">
+                            Tratamiento profundo enfocado en liberar contracturas severas en espalda, cuello y hombros acumuladas por el estrés laboral.
+                        </p>
+                    </div>
+                    <a href="https://wa.me/593994440358?text=Hola%20Balance,%20me%20interesa%20el%20Masaje%20Descontracturante." target="_blank" class="inline-flex items-center gap-2 text-brand-gold hover:text-white transition-colors text-sm font-semibold mt-6">
+                        Agendar servicio <i class="fa-solid fa-arrow-right text-xs"></i>
                     </a>
-                    <a href="#servicios" class="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white font-medium px-8 py-4 rounded-full border border-white/20 backdrop-blur-sm transition-all duration-300">
-                        Explorar Servicios
+                </div>
+
+                <!-- Servicio 2 -->
+                <div class="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/10 hover:border-brand-gold/30 transition-all duration-300 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-brand-gold/10 flex items-center justify-center border border-brand-gold/30">
+                            <i class="fa-solid fa-person-running text-brand-gold text-2xl"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold">Masaje de Descarga</h3>
+                        <p class="text-sm font-light text-brand-bg/70 leading-relaxed">
+                            Especial para deportistas. Ayuda a drenar y recuperar las fibras musculares fatigadas, previniendo lesiones graves.
+                        </p>
+                    </div>
+                    <a href="https://wa.me/593994440358?text=Hola%20Balance,%20me%20interesa%20el%20Masaje%20de%20Descarga." target="_blank" class="inline-flex items-center gap-2 text-brand-gold hover:text-white transition-colors text-sm font-semibold mt-6">
+                        Agendar servicio <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Servicio 3 -->
+                <div class="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/10 hover:border-brand-gold/30 transition-all duration-300 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-brand-gold/10 flex items-center justify-center border border-brand-gold/30">
+                            <i class="fa-solid fa-briefcase-medical text-brand-gold text-2xl"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold">Fisioterapia Clínica</h3>
+                        <p class="text-sm font-light text-brand-bg/70 leading-relaxed">
+                            Rehabilitación y terapia manual personalizada para tratar lumbalgias, cervicalgias crónicas y lesiones articulares.
+                        </p>
+                    </div>
+                    <a href="https://wa.me/593994440358?text=Hola%20Balance,%20necesito%20Fisioterapia%20Clínica." target="_blank" class="inline-flex items-center gap-2 text-brand-gold hover:text-white transition-colors text-sm font-semibold mt-6">
+                        Agendar servicio <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Servicio 4 -->
+                <div class="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/10 hover:border-brand-gold/30 transition-all duration-300 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-brand-gold/10 flex items-center justify-center border border-brand-gold/30">
+                            <i class="fa-solid fa-wind text-brand-gold text-2xl"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold">Aromaterapia Relax</h3>
+                        <p class="text-sm font-light text-brand-bg/70 leading-relaxed">
+                            Sesiones de equilibrio total con aceites esenciales puros, que calman la mente y disuelven el agotamiento emocional de la semana.
+                        </p>
+                    </div>
+                    <a href="https://wa.me/593994440358?text=Hola%20Balance,%20quiero%20Aromaterapia%20Relax." target="_blank" class="inline-flex items-center gap-2 text-brand-gold hover:text-white transition-colors text-sm font-semibold mt-6">
+                        Agendar servicio <i class="fa-solid fa-arrow-right text-xs"></i>
                     </a>
                 </div>
             </div>
-            <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
-                <a href="#servicios" class="text-white/60 hover:text-white text-2xl">
-                    <i class="fa-solid fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <section id="test" class="py-24 px-6 bg-[#F3ECE2]/50">
+        <div class="max-w-4xl mx-auto bg-white rounded-3xl premium-shadow border border-brand-sage/10 overflow-hidden">
+            <div class="grid md:grid-cols-5 grid-cols-1">
+                <!-- Banner lateral -->
+                <div class="md:col-span-2 bg-brand-dark text-white p-8 md:p-12 flex flex-col justify-between space-y-6">
+                    <div>
+                        <span class="text-brand-gold text-xs font-semibold tracking-widest uppercase block mb-3">Autodiagnóstico</span>
+                        <h3 class="font-serif text-3xl font-bold">¿Qué necesita tu cuerpo hoy?</h3>
+                    </div>
+                    <p class="text-brand-bg/80 text-sm font-light leading-relaxed">
+                        Responde 3 preguntas rápidas y nuestro algoritmo de bienestar te recomendará la sesión ideal para sanar tu dolencia física.
+                    </p>
+                    <div class="text-brand-gold/40 text-7xl font-serif hidden md:block">
+                        BALANCE
+                    </div>
+                </div>
+
+                <!-- Contenido del Quiz -->
+                <div class="md:col-span-3 p-8 md:p-12 flex flex-col justify-center">
+                    <div id="quiz-container">
+                        <!-- Pantalla Inicial -->
+                        <div id="quiz-intro" class="space-y-6">
+                            <h4 class="font-serif text-2xl font-bold text-brand-dark">Test de Bienestar (1 Minuto)</h4>
+                            <p class="text-brand-neutral leading-relaxed">Analizaremos tus dolores, fatiga laboral y nivel de estrés para sugerirte el tratamiento más efectivo.</p>
+                            <button onclick="startQuiz()" class="w-full bg-brand-sage hover:bg-brand-dark text-white font-semibold py-4 rounded-xl transition-all duration-300">
+                                Iniciar Test Gratuito
+                            </button>
+                        </div>
+
+                        <!-- Pregunta 1 -->
+                        <div id="quiz-q1" class="hidden space-y-6">
+                            <span class="text-brand-sage font-bold text-sm block">Pregunta 1 de 3</span>
+                            <h4 class="font-serif text-xl font-bold text-brand-dark">¿En qué parte de tu cuerpo sientes mayor tensión o dolor?</h4>
+                            <div class="space-y-3">
+                                <button onclick="saveAnswer('q1', 'Cuello, hombros y espalda alta (Estrés de oficina)', 1)" class="w-full text-left p-4 rounded-xl border border-brand-sage/20 hover:border-brand-gold hover:bg-brand-bg transition-all duration-300 text-sm font-medium text-brand-neutral">
+                                    <i class="fa-solid fa-laptop text-brand-gold mr-2"></i> Cuello, hombros y espalda alta (Oficina)
+                                </button>
+                                <button onclick="saveAnswer('q1', 'Cervicales o zona lumbar constante', 2)" class="w-full text-left p-4 rounded-xl border border-brand-sage/20 hover:border-brand-gold hover:bg-brand-bg transition-all duration-300 text-sm font-medium text-brand-neutral">
+                                    <i class="fa-solid fa-house-medical text-brand-gold mr-2"></i> Cervicales o zona lumbar constante
+                                </button>
+                                <button onclick="saveAnswer('q1', 'Sobrecarga muscular por ejercicio o gimnasio', 3)" class="w-full text-left p-4 rounded-xl border border-brand-sage/20 hover:border-brand-gold hover:bg-brand-bg transition-all duration-300 text-sm font-medium text-brand-neutral">
+                                    <i class="fa-solid fa-dumbbell text-brand-gold mr-2"></i> Sobrecarga muscular por ejercicio
+                                </button>
+                                <button onclick="saveAnswer('q1', 'Agotamiento mental y tensión generalizada', 4)" class="w-full text-left p-4 rounded-xl border border-brand-sage/20 hover:border-brand-gold hover:bg-brand-bg transition-all duration-300 text-sm font-medium text-brand-neutral">
+                                    <i class="fa-solid fa-spa text-brand-gold mr-2"></i> Agotamiento mental y tensión general
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Pregunta 2 -->
+                        <div id="quiz-q2" class="hidden space-y-6">
+                            <span class="text-brand-sage font-bold text-sm block">Pregunta 2 de 3</span>
+                            <h4 class="font-serif text-xl font-bold text-brand-dark">¿Cómo describirías tu rutina diaria la mayor parte de la semana?</h4>
+                            <div class="space-y-3">
+                                <button onclick="saveAnswer('q2', 'Paso más de 6 horas sentado frente a la computadora.', 1)" class="w-full text-left p-4 rounded-xl border border-brand-sage/20 hover:border-brand-gold hover:bg-brand-bg transition-all duration-300 text-sm font-medium text-brand-neutral">
+                                    Sentado frente a la pantalla
+                                </button>
+                                <button onclick="saveAnswer('q2', 'Entreno intensamente (Gimnasio, running, crossfit, etc).', 3)" class="w-full text-left p-4 rounded-xl border border-brand-sage/20 hover:border-brand-gold hover:bg-brand-bg transition-all duration-300 text-sm font-medium text-brand-neutral">
+                                    Entrenamiento de alto rendimiento o gimnasio
+                                </button>
+                                <button onclick="saveAnswer('q2', 'Trabajo de pie, viajo mucho o camino constantemente.', 2)" class="w-full text-left p-4 rounded-xl border border-brand-sage/20 hover:border-brand-gold hover:bg-brand-bg transition-all duration-300 text-sm font-medium text-brand-neutral">
+                                    De pie, viajando o caminando mucho
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Pregunta 3 -->
+                        <div id="quiz-q3" class="hidden space-y-6">
+                            <span class="text-brand-sage font-bold text-sm block">Pregunta 3 de 3</span>
+                            <h4 class="font-serif text-xl font-bold text-brand-dark">¿Cuál es tu objetivo principal al visitarnos en Balance?</h4>
+                            <div class="space-y-3">
+                                <button onclick="calculateResult('Aliviar un dolor específico y mejorar mi postura.')" class="w-full text-left p-4 rounded-xl border border-brand-sage/20 hover:border-brand-gold hover:bg-brand-bg transition-all duration-300 text-sm font-medium text-brand-neutral">
+                                    Aliviar un dolor físico puntual y postura
+                                </button>
+                                <button onclick="calculateResult('Desconectarme del trabajo y relajar mi mente.')" class="w-full text-left p-4 rounded-xl border border-brand-sage/20 hover:border-brand-gold hover:bg-brand-bg transition-all duration-300 text-sm font-medium text-brand-neutral">
+                                    Desconectar mi mente y relajarme por completo
+                                </button>
+                                <button onclick="calculateResult('Descargar la fatiga muscular acumulada.')" class="w-full text-left p-4 rounded-xl border border-brand-sage/20 hover:border-brand-gold hover:bg-brand-bg transition-all duration-300 text-sm font-medium text-brand-neutral">
+                                    Descargar mis músculos para seguir entrenando
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Pantalla Resultado -->
+                        <div id="quiz-result" class="hidden space-y-6 text-center">
+                            <div class="w-16 h-16 rounded-full bg-brand-sage/10 text-brand-sage flex items-center justify-center mx-auto text-3xl">
+                                <i class="fa-solid fa-sparkles"></i>
+                            </div>
+                            <h4 class="font-serif text-2xl font-bold text-brand-dark">¡Recomendación Listo!</h4>
+                            <div class="bg-brand-bg p-5 rounded-2xl border border-brand-sage/10 text-left">
+                                <p class="text-xs uppercase tracking-wider text-brand-sage font-semibold mb-1">Tu terapia ideal:</p>
+                                <p id="result-service" class="font-serif text-xl font-bold text-brand-dark mb-2">Masaje Descontracturante + Aromaterapia</p>
+                                <p id="result-reason" class="text-sm font-light text-brand-neutral/90 leading-relaxed">Diseñada exactamente para mitigar el estrés postural en trapecios y hombros debido al trabajo de oficina.</p>
+                            </div>
+                            <p class="text-xs text-brand-neutral/70">Al pulsar el botón se abrirá tu WhatsApp con el mensaje del resultado precargado.</p>
+                            <a id="result-wa-btn" href="#" target="_blank" class="block w-full bg-brand-gold hover:bg-brand-goldDark text-brand-dark font-bold py-4 rounded-xl transition-all duration-300 shadow-md">
+                                <i class="fa-brands fa-whatsapp text-lg mr-1"></i> Reservar esta Sesión
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="ubicacion" class="py-24 px-6 max-w-7xl mx-auto space-y-16">
+        <div class="text-center max-w-xl mx-auto space-y-4">
+            <span class="text-brand-sage font-semibold uppercase tracking-[0.2em] text-xs block">Visítanos en Quito</span>
+            <h2 class="font-serif text-4xl font-bold text-brand-dark">Ubicación & Contacto</h2>
+            <div class="h-0.5 w-12 bg-brand-sage mx-auto"></div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <!-- Columna Datos -->
+            <div class="lg:col-span-5 space-y-8">
+                <div class="bg-white p-8 rounded-3xl premium-shadow border border-brand-sage/10 space-y-6">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-brand-sage/10 flex items-center justify-center text-brand-sage text-xl shrink-0">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-brand-dark mb-1">Dirección del Consultorio</h4>
+                            <p class="text-sm text-brand-neutral/90 leading-relaxed">
+                                Av. 6 de Diciembre y Luis Cordero E9-39.<br>Quito, Ecuador.
+                            </p>
+                            <!-- Enlace real de Google Maps -->
+                            <a href="https://maps.app.goo.gl/XcCS7cS1LdKC9bbTA" target="_blank" rel="noopener noreferrer" class="text-brand-sage hover:text-brand-dark text-sm font-semibold inline-flex items-center gap-1.5 mt-2.5 transition-all duration-300 transform hover:translate-x-1">
+                                <i class="fa-solid fa-diamond-turn-right text-brand-gold"></i> Cómo llegar en Google Maps <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-brand-sage/10 flex items-center justify-center text-brand-sage text-xl shrink-0">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-brand-dark mb-1">Horario de Atención</h4>
+                            <p class="text-sm text-brand-neutral/90 leading-relaxed">
+                                Lunes a Viernes: 08:00 AM – 08:00 PM<br>Sábados: 09:00 AM – 02:00 PM
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-brand-sage/10 flex items-center justify-center text-brand-sage text-xl shrink-0">
+                            <i class="fa-solid fa-mobile-screen-button"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-brand-dark mb-1">Reservas por WhatsApp</h4>
+                            <p class="text-sm text-brand-neutral/90 mb-2">Respuesta en menos de 10 minutos.</p>
+                            <a href="https://wa.me/593994440358" target="_blank" class="text-brand-sage hover:text-brand-dark text-sm font-semibold inline-flex items-center gap-1">
+                                099 444 0358 <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Columna Publicación Destacada de Instagram (En vez del mapa) -->
+            <div class="lg:col-span-7 flex justify-center">
+                <!-- Tarjeta de simulación interactiva de Instagram Premium -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-2xl border border-brand-sage/10 w-full max-w-[480px] font-sans">
+                    <!-- Encabezado de la publicación -->
+                    <div class="p-4 flex items-center justify-between border-b border-brand-sage/5">
+                        <a href="https://instagram.com/balance_terapiafisica" target="_blank" class="flex items-center gap-3 group">
+                            <div class="w-10 h-10 rounded-full border border-brand-gold overflow-hidden shrink-0 bg-brand-bg">
+                                <img src="logo.png" alt="BALANCE" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/150x150/FAF8F5/2C3E35?text=B';">
+                            </div>
+                            <div>
+                                <span class="font-bold text-sm text-brand-dark block group-hover:text-brand-sage transition-colors">balance_terapiafisica</span>
+                                <span class="text-xs text-brand-neutral/70 block -mt-0.5">Av. 6 de Diciembre y Luis Cordero</span>
+                            </div>
+                        </a>
+                        <a href="https://instagram.com/balance_terapiafisica" target="_blank" class="text-brand-dark hover:text-brand-sage">
+                            <i class="fa-solid fa-ellipsis"></i>
+                        </a>
+                    </div>
+
+                    <!-- Imagen del Post (Consultorio) con link a Instagram -->
+                    <a href="https://instagram.com/balance_terapiafisica" target="_blank" class="block aspect-square relative overflow-hidden bg-brand-sage/20 group">
+                        <img src="WhatsApp Image 2026-07-09 at 12.51.21_2.jpeg" alt="Consultorio BALANCE" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&q=80&w=800'">
+                        <div class="absolute inset-0 bg-brand-dark/15 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <span class="bg-white/90 backdrop-blur-sm text-brand-dark px-4 py-2 rounded-full text-xs font-semibold shadow-md flex items-center gap-1.5">
+                                <i class="fa-brands fa-instagram text-brand-sage"></i> Ver en Instagram
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- Interacciones del Post -->
+                    <div class="p-5 space-y-3.5">
+                        <div class="flex items-center justify-between text-2xl text-brand-dark">
+                            <div class="flex items-center gap-5">
+                                <button onclick="toggleInstagramHeart(this)" class="hover:scale-110 active:scale-95 transition-transform duration-200 focus:outline-none">
+                                    <i class="fa-regular fa-heart cursor-pointer"></i>
+                                </button>
+                                <a href="https://instagram.com/balance_terapiafisica" target="_blank" class="hover:scale-110 active:scale-95 transition-transform duration-200">
+                                    <i class="fa-regular fa-comment"></i>
+                                </a>
+                                <a href="https://instagram.com/balance_terapiafisica" target="_blank" class="hover:scale-110 active:scale-95 transition-transform duration-200">
+                                    <i class="fa-regular fa-paper-plane"></i>
+                                </a>
+                            </div>
+                            <a href="https://instagram.com/balance_terapiafisica" target="_blank" class="hover:scale-110 active:scale-95 transition-transform duration-200">
+                                <i class="fa-regular fa-bookmark"></i>
+                            </a>
+                        </div>
+
+                        <!-- Detalles del Post -->
+                        <div class="space-y-1.5 text-sm">
+                            <p class="font-bold text-brand-dark">
+                                Les gusta a <span id="likes-count">148</span> personas
+                            </p>
+                            <p class="text-brand-neutral/90 leading-relaxed">
+                                <span class="font-bold text-brand-dark mr-1">balance_terapiafisica</span>¿En qué porcentaje está la batería de tu cuerpo hoy? 🔋❌ El estrés y la mala postura te agotan. Agenda tu sesión de alivio hoy mismo. ✨💆‍♀️
+                            </p>
+                            <span class="text-[10px] uppercase tracking-wider text-brand-neutral/60 block pt-1">HACE 2 DÍAS</span>
+                        </div>
+
+                        <!-- Botón directo de acción -->
+                        <div class="pt-3 border-t border-brand-sage/5">
+                            <a href="https://instagram.com/balance_terapiafisica" target="_blank" class="w-full bg-brand-sage hover:bg-brand-dark text-white font-semibold py-3 rounded-xl transition-all duration-300 text-center text-xs tracking-wider uppercase inline-flex items-center justify-center gap-2">
+                                <i class="fa-brands fa-instagram text-sm"></i> Seguir en Instagram
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark text-brand-bg/80 border-t border-white/5 py-16 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 border-b border-white/5 pb-12">
+            <div class="text-center md:text-left space-y-2">
+                <span class="font-serif text-2xl font-bold tracking-widest text-white block">BALANCE</span>
+                <span class="text-xs uppercase tracking-widest text-brand-gold">Fisioterapia, Masajes & Bienestar</span>
+            </div>
+            <div class="flex items-center gap-6 text-2xl">
+                <a href="https://instagram.com/balance_terapiafisica" target="_blank" class="hover:text-brand-gold transition-colors">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://wa.me/593994440358" target="_blank" class="hover:text-brand-gold transition-colors">
+                    <i class="fa-brands fa-whatsapp"></i>
                 </a>
             </div>
-        </header>
+        </div>
+        <div class="max-w-7xl mx-auto pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-light text-brand-bg/60">
+            <p>&copy; 2026 BALANCE - Terapia Física y Masajes. Quito, Ecuador. Todos los derechos reservados.</p>
+            <p>Diseño Web Premium de Wellness.</p>
+        </div>
+    </footer>
 
-        <section id="filosofia" class="py-24 px-6 max-w-7xl mx-auto">
-<!-- ... existing code ... -->
+    <!-- Botón Flotante de WhatsApp para Conversiones Continuas -->
+    <a href="https://wa.me/593994440358?text=Hola%20Balance,%20me%20gustaría%20solicitar%20información." target="_blank" class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 flex items-center justify-center">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+    </a>
+
+    <!-- Lógica JavaScript del Autodiagnóstico -->
+    <script>
+        // Función interactiva para dar Like al post simulado
+        let liked = false;
+        function toggleInstagramHeart(btn) {
+            const icon = btn.querySelector('i');
+            const likesCount = document.getElementById('likes-count');
+            let currentLikes = parseInt(likesCount.innerText);
+            
+            if (!liked) {
+                icon.className = 'fa-solid fa-heart text-red-500';
+                likesCount.innerText = currentLikes + 1;
+                liked = true;
+            } else {
+                icon.className = 'fa-regular fa-heart';
+                likesCount.innerText = currentLikes - 1;
+                liked = false;
+            }
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            menu.classList.toggle('hidden');
+            if (menu.classList.contains('hidden')) {
+                icon.className = 'fa-solid fa-bars-staggered';
+            } else {
+                icon.className = 'fa-solid fa-xmark';
+            }
+        }
+
+        // Lógica de Estado para el Quiz interactivo
+        let quizAnswers = {
+            q1: '',
+            q2: '',
+            score: 0
+        };
+
+        function startQuiz() {
+            document.getElementById('quiz-intro').classList.add('hidden');
+            document.getElementById('quiz-q1').classList.remove('hidden');
+        }
+
+        function saveAnswer(question, answerText, scoreVal) {
+            quizAnswers[question] = answerText;
+            quizAnswers.score += scoreVal;
+
+            if (question === 'q1') {
+                document.getElementById('quiz-q1').classList.add('hidden');
+                document.getElementById('quiz-q2').classList.remove('hidden');
+            } else if (question === 'q2') {
+                document.getElementById('quiz-q2').classList.add('hidden');
+                document.getElementById('quiz-q3').classList.remove('hidden');
+            }
+        }
+
+        function calculateResult(q3Answer) {
+            document.getElementById('quiz-q3').classList.add('hidden');
+            document.getElementById('quiz-result').classList.remove('hidden');
+
+            let recommendedService = "";
+            let reasonText = "";
+            let waText = "";
+
+            // Lógica inteligente de recomendación según las respuestas acumuladas
+            if (quizAnswers.score <= 3) {
+                recommendedService = "Masaje Descontracturante + Aromaterapia 💻💆‍♀️";
+                reasonText = "Diseñada exactamente para mitigar el dolor tensional y muscular en el trapecio, cuello y espalda por las largas jornadas sentado de oficina.";
+                waText = `Hola BALANCE! Completé el test en su sitio web. Mi recomendación fue la sesión de "Masaje Descontracturante + Aromaterapia" porque paso mucho tiempo sentado frente a la computadora y siento tensión en hombros y cuello. ¿Me ayudan con los horarios disponibles?`;
+            } else if (quizAnswers.score >= 4 && quizAnswers.score <= 5) {
+                recommendedService = "Fisioterapia Clínica y Terapia Manual 🏥👩‍⚕️";
+                reasonText = "Presentas una molestia física focalizada y prolongada. Te recomendamos una sesión clínica de evaluación postural y terapia de readaptación física activa.";
+                waText = `Hola BALANCE! Hice el test de autodiagnóstico. Me sugirió la sesión de "Fisioterapia Clínica y Terapia Manual" debido a un dolor lumbar/postural continuo. ¿Qué costo tiene y qué horarios tienen libres esta semana?`;
+            } else {
+                recommendedService = "Masaje de Descarga Muscular Deportiva 🏃‍♂️⚡";
+                reasonText = "Tus fibras musculares están muy tensas por fatiga de entrenamiento o ejercicio de alta carga. Esta sesión disolverá el ácido láctico y evitará contracturas o desgarros.";
+                waText = `Hola BALANCE! Hice el autodiagnóstico en su web. Me recomendó el "Masaje de Descarga Deportiva" por sobrecarga y fatiga por entrenamiento. ¿Tienen disponibilidad de reserva?`;
+            }
+
+            // Aplicar textos en la UI del resultado
+            document.getElementById('result-service').innerText = recommendedService;
+            document.getElementById('result-reason').innerText = reasonText;
+            
+            // Configurar enlace con formato codificado para WhatsApp
+            const phone = "593994440358";
+            const finalUrl = `https://wa.me/${phone}?text=${encodeURIComponent(waText)}`;
+            document.getElementById('result-wa-btn').setAttribute('href', finalUrl);
+        }
+    </script>
+</body>
+</html>
